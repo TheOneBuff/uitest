@@ -9,7 +9,7 @@ import os
 from configparser import ConfigParser
 
 config = ConfigParser()
-config.read(os.path.join(os.path.dirname(__file__), '../config/config.ini'))
+config.read(os.path.join(os.path.dirname(__file__), '..\\config\\config.ini'))
 
 
 def get_base_url():

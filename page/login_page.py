@@ -7,6 +7,7 @@
 """
 from selenium.webdriver.common.by import By
 from utils.driver import get_driver
+from utils.read_config import get_base_url
 
 
 class LoginPage:

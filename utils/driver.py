@@ -1,4 +1,4 @@
-c# -*- coding:utf-8 _*-
+# -*- coding:utf-8 _*-
 # coding=utf-8
 """
 @Time: 2023/8/13 14:44
@@ -12,7 +12,7 @@ from configparser import ConfigParser
 
 def get_driver():
     config = ConfigParser()
-    config.read(os.path.join(os.path.dirname(__file__), '../config/config.ini'))
+    config.read(os.path.join(os.path.dirname(__file__), '..\\config\\config.ini'))
 
     browser_name = config.get('Browser', 'browser_name')
     if browser_name.lower() == 'chrome':
