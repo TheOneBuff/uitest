@@ -31,3 +31,9 @@ if __name__ == '__main__':
     #                 content = content.replace('{}"'.format(screenshot_name), '{}" width="50%"'.format(screenshot_url))
     #     f.seek(0)
     #     f.write(content)
+#http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css
+#http://libs.baidu.com/jquery/2.0.0/jquery.min.js
+#http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js
+#https://img.hcharts.cn/highcharts/highcharts.js
+#https://img.hcharts.cn/highcharts/modules/exporting.js
+#https://img.hcharts.cn/highcharts/modules/exporting.js
