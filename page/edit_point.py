@@ -1,20 +1,19 @@
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
-
 from utils import read_config
 from utils.driver import get_driver
 from utils.take_screenshot import take_screenshot
 
 
-class add_point:
+class edit_point:
     url = read_config.get_edit_url()
 
     def __init__(self):
         self.driver = get_driver()
         self.driver.maximize_window()
 
-    def add(self):
+    def edit(self):
         self.driver.get(self.url)
         # 获取新增知识点坐标并且点击
         time.sleep(3)
