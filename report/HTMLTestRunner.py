@@ -250,13 +250,13 @@ class Template_mixin(object):
     <title>%(title)s</title>
     <meta name="generator" content="%(generator)s"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
-    <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+    <link href="..\utils/bootstrap.min.css" rel="stylesheet">
+    <script src="..\utils/jquery.min.js"></script>
+    <script src="..\utils/bootstrap.min.js"></script>
+    <script src="..\utils/highcharts.js"></script>
+    <script src="..\utils/exporting.js"></script>
     %(stylesheet)s
-</head>
+</head>c
 <body >
 <script language="javascript" type="text/javascript">
     $(function(){

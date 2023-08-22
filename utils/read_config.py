@@ -14,3 +14,7 @@ config.read(os.path.join(os.path.dirname(__file__), '..\\config\\config.ini'))
 
 def get_base_url():
     return config.get('URL', 'base_url')
+
+# 脑图新增知识点
+def get_edit_url():
+    return config.get('URL', 'edit_point_url')

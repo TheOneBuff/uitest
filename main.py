@@ -3,7 +3,6 @@ import os
 from datetime import datetime
 from utils.logger import get_logger
 from report import HTMLTestRunner
-from report import WHPRunner
 from utils.read_config import get_base_url
 
 logger = get_logger(__name__)
