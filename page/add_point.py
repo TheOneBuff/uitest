@@ -25,7 +25,7 @@ class add_point:
         span_em = self.driver.find_elements(By.TAG_NAME, 'span')
         time.sleep(3)
         for span in span_em:
-            if span.text == "新增知识点":
+            if span.text == "新增知识c点":
                 ActionChains(self.driver).click(span).perform()
                 # 获取图表并且点击
                 table = self.driver.find_elements(By.ID, 'tabs-tab-2')

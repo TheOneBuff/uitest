@@ -18,3 +18,11 @@ def get_base_url():
 # 脑图新增知识点
 def get_edit_url():
     return config.get('URL', 'edit_point_url')
+
+
+def post_update_url():
+    return config.get('URL', 'post_update_url')
+
+
+def get_nodeId_url():
+    return config.get('URL', 'get_nodeId_url')

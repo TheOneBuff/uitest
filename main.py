@@ -9,7 +9,7 @@ logger = get_logger(__name__)
 
 if __name__ == '__main__':
     logger.info('Start testing...')
-    suite = unittest.defaultTestLoader.discover('testcase',pattern='add_point.py')
+    suite = unittest.defaultTestLoader.discover('testcase',pattern='edit_point.py')
     report_file = 'report/test_report_{}.html'.format(datetime.now().strftime('%Y-%m-%d_%H-%M-%S'))
     with open(report_file, 'wb') as f:
         runner = HTMLTestRunner.HTMLTestRunner(stream=f, title='Test Report', description='Test Result')
