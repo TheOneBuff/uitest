@@ -6,6 +6,7 @@ from utils.driver import get_driver
 from utils.take_screenshot import take_screenshot
 import requests
 import json
+from selenium.webdriver.support.select import Select
 
 
 class edit_point:
@@ -41,7 +42,12 @@ class edit_point:
                 driver.find_elements(By.ID, 'minder_node%s' % str(i + 1))[0]
             except:
                 return i
-
+    def click_locxy(self,dr,x,y,left_click=True):
+        if left_click:
+            ActionChains(dr).move_by_offset(x,y).click().perform()
+        else:
+            ActionChains(dr).move_by_offset(x,y).context_click().perform()
+        ActionChains(dr).move_by_offset(-x, -y).perform()
 
     def add_first_node(self):
         self.driver.get(self.url)
@@ -62,22 +68,34 @@ class edit_point:
             ActionChains(self.driver).click(defined[0]).perform()
             time.sleep(5)
             self.driver.find_element(By.ID, 'definition').send_keys('UI测试指标定义')
+            take_screenshot(self.driver, '需求定义')
             time.sleep(5)
-            zhibiaodingyi = [em for em in self.driver.find_elements(By.CLASS_NAME, 'ant-tabs-tab-btn') if em.text == '需求定义']
+            zhibiaodingyi = [em for em in self.driver.find_elements(By.CLASS_NAME, 'ant-tabs-tab-btn') if em.text == '指标定义']
             ActionChains(self.driver).click(zhibiaodingyi[0]).perform()
-            time.sleep(10)
-            tianjiazhibiao = self.driver.find_element(By.CLASS_NAME, 'anticon.anticon-plus-circle')
-            ActionChains(self.driver).click(tianjiazhibiao).perform()
+            time.sleep(2)
+            tianjiazhibiao = [em for em in self.driver.find_elements(By.TAG_NAME, 'span') if em.text == '添加指标']
+            ActionChains(self.driver).click(tianjiazhibiao[0]).perform()
+            time.sleep(2)
             self.driver.find_element(By.ID, 'indicatorName').send_keys('UI测试')
             self.driver.find_element(By.ID, 'indexAbbreviation').send_keys('UI测试名')
-            self.driver.find_element(By.ID, 'definition').send_keys('UI测试指标定义')
-            self.driver.find_element(By.ID, 'sourceWind_edbIndicatorId').send_keys('m00c0004')
-            time.sleep(10)
+            self.driver.find_element(By.ID, 'sourceWind_edbIndicatorId').send_keys('m0000004')
+            take_screenshot(self.driver, '添加指标')
+            time.sleep(2)
             zhishidiandingyi = [em for em in self.driver.find_elements(By.CLASS_NAME, 'ant-tabs-tab-btn') if em.text == '知识点定义']
             ActionChains(self.driver).click(zhishidiandingyi[0]).perform()
-            xinzengzhishidian = self.driver.find_element(By.CLASS_NAME, 'anticon.anticon-plus-circle')
-            ActionChains(self.driver).click(xinzengzhishidian).perform()
-
+            xinzengzhishidian = [em for em in self.driver.find_elements(By.TAG_NAME, 'span') if em.text == '添加知识点']
+            ActionChains(self.driver).click(xinzengzhishidian[0]).perform()
+            time.sleep(2)
+            input = self.driver.find_element(By.CLASS_NAME, 'ant-select-selection-overflow')
+            ActionChains(self.driver).click(input).perform()
+            time.sleep(2)
+            ele = [em for em in self.driver.find_elements(By.CLASS_NAME, 'ant-select-item-option-content') if em.text == 'UI测试']
+            ActionChains(self.driver).click(ele[0]).perform()
+            take_screenshot(self.driver, '添加知识点')
+            print(ele[0].location.get('x'))
+            print(ele[0].location.get('y'))
+            print("sucessed")
+            time.sleep(10)
 
 
     def close(self):
