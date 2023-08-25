@@ -21,7 +21,7 @@ class edit_point:
                   "Content-Type": "application/json;charset=UTF-8",
                   "Cookies": "JSESSIONID=CD579C23A983C7520F3A708DB714D312; JSESSIONID=4072DE381BBB6DAF8A1BBE6FAFE9FE6B"
                   }
-        data = {"nodeId": "6dba5d45-a252-484d-9abe-fec8505c16ee",
+        data = {"nodeId": "",
                 "name": "自动创建_%s" % time.strftime('%Y%m%d_%H_%M_%S',time.localtime()),
                 "nameEn": "",
                 "lang": "zh",
@@ -54,7 +54,7 @@ class edit_point:
         time.sleep(10)
         root_node = self.driver.find_element(By.ID, 'node_outline1')
         ActionChains(self.driver).context_click(root_node).perform()
-        take_screenshot(self.driver, 'add_first_node')
+        take_screenshot(self.driver, '添加子主题')
         click_sub_theme = [em for em in self.driver.find_elements(By.CLASS_NAME, 'menu-item-name') if em.text == '新增子主题']
         ActionChains(self.driver).click(click_sub_theme[0]).perform()
         time.sleep(3)
@@ -92,8 +92,8 @@ class edit_point:
             ele = [em for em in self.driver.find_elements(By.CLASS_NAME, 'ant-select-item-option-content') if em.text == 'UI测试']
             ActionChains(self.driver).click(ele[0]).perform()
             take_screenshot(self.driver, '添加知识点')
-            print(ele[0].location.get('x'))
-            print(ele[0].location.get('y'))
+            # print(ele[0].location.get('x'))
+            # print(ele[0].location.get('y'))
             print("sucessed")
             time.sleep(10)
 
