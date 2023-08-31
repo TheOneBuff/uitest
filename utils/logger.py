@@ -8,14 +8,26 @@
 import logging
 import os
 from loguru import logger
-from configparser import ConfigParser
+import datetime
 
-config = ConfigParser()
-config.read(os.path.join(os.path.dirname(__file__), '..\\config\\logger.ini'))
 
-# logger.add(config.get('handler_fileHandler', 'class'), level=config.get('logger_root', 'level'),
-#            rotation='D',retention='')
-logging.basicConfig(filename='logs\\test.log')
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+# 设置将日志输出到文件中，并且定义文件内容
+now = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+fileinfo = logging.FileHandler(f"AutoTest_log_{now}.log")
+fileinfo.setLevel(logging.INFO)
+# 设置将日志输出到控制台
+controlshow = logging.StreamHandler()
+controlshow.setLevel(logging.INFO)
+# 设置日志的格式
+formatter = logging.Formatter("%(asctime)s - %(levelname)s: %(message)s")
+fileinfo.setFormatter(formatter)
+controlshow.setFormatter(formatter)
+
+logger.addHandler(fileinfo)
+logger.addHandler(controlshow)
+
 
 def get_logger(name):
     return logger.bind(name=name)
