@@ -1038,7 +1038,7 @@ class HTMLTestRunner(Template_mixin):
         )
         return heading
 
-    # 生成报告  --Findyou添加注释
+    # 生成报告  --Findyou添加注释c
     def _generate_report(self, result):
         rows = []
         sortedResult = self.sortResult(result.result)

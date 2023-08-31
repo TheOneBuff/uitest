@@ -26,3 +26,7 @@ def post_update_url():
 
 def get_nodeId_url():
     return config.get('URL', 'get_nodeId_url')
+
+
+def get_pointview_url():
+    return config.get('URL', 'point_view_url')
