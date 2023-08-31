@@ -12,4 +12,4 @@ class TestEditPoint(unittest.TestCase):
 
     # 新增子主题
     def test_add_first_node(self):
-        self.page.add_sub_cctheme()
+        self.page.add_sub_theme()
