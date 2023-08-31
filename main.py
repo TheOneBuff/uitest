@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 from utils.logger import get_logger
 from report import HTMLTestRunner
-logger = get_logger(__name__)
+logger = get_logger()
 
 
 if __name__ == '__main__':

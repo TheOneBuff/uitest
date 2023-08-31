@@ -250,11 +250,11 @@ class Template_mixin(object):
     <title>%(title)s</title>
     <meta name="generator" content="%(generator)s"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="..\utils/bootstrap.min.css" rel="stylesheet">
-    <script src="..\utils/jquery.min.js"></script>
-    <script src="..\utils/bootstrap.min.js"></script>
-    <script src="..\utils/highcharts.js"></script>
-    <script src="..\utils/exporting.js"></script>
+    <link href="..\utils\static/bootstrap.min.css" rel="stylesheet">
+    <script src="..\utils\static/jquery.min.js"></script>
+    <script src="..\utils\static/bootstrap.min.js"></script>
+    <script src="..\utils\static/highcharts.js"></script>
+    <script src="..\utils\static/exporting.js"></script>
     %(stylesheet)s
 </head>c
 <body >

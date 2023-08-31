@@ -10,12 +10,11 @@ import os
 from loguru import logger
 import datetime
 
-
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 # 设置将日志输出到文件中，并且定义文件内容
 now = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-fileinfo = logging.FileHandler(f"AutoTest_log_{now}.log")
+fileinfo = logging.FileHandler(f"logs\\AutoTest_log_{now}.log")
 fileinfo.setLevel(logging.INFO)
 # 设置将日志输出到控制台
 controlshow = logging.StreamHandler()
@@ -29,5 +28,5 @@ logger.addHandler(fileinfo)
 logger.addHandler(controlshow)
 
 
-def get_logger(name):
-    return logger.bind(name=name)
+def get_logger():
+    return logger
